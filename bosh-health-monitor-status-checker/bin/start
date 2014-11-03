@@ -1,0 +1,15 @@
+#!/bin/bash
+pushd `dirname $0` > /dev/null
+SCRIPTPATH=`pwd -P`
+popd > /dev/null
+
+cd $SCRIPTPATH/..
+
+if [ ! -d "logstash-1.4.2" ]; then
+  echo "=====> Fetching logstash-1.4.2"
+  curl --silent https://download.elasticsearch.org/logstash/logstash/logstash-1.4.2.tar.gz | tar xz
+  echo "=====> Fetching logstash-1.4.2 contrib"
+  logstash-1.4.2/bin/plugin install contrib
+fi
+
+logstash-1.4.2/bin/logstash agent -f logstash.conf
