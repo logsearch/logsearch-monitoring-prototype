@@ -1,0 +1,15 @@
+#!/bin/bash
+pushd `dirname $0` > /dev/null
+SCRIPTPATH=`pwd -P`
+popd > /dev/null
+
+cd $SCRIPTPATH/..
+
+if [ ! -d "logstash-1.5.0" ]; then
+  echo "=====> Fetching logstash-1.5.0"
+  mkdir -p logstash-1.5.0; cd logstash-1.5.0
+  curl --silent http://jenkins.elasticsearch.org/view/Logstash/job/Logstash_Nightly_1.5/lastSuccessfulBuild/artifact/artefacts/logstash-1.5.0.dev.tar.gz | tar xz
+  cd ..
+fi
+
+logstash-1.5.0/bin/logstash --pluginpath lib -f logstash.conf
