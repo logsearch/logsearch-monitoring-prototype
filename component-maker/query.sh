@@ -34,19 +34,19 @@ do
    },
     "aggs" : {
         "environment" : {
-            "terms" : { "field" : "@source.bosh_director" },
+            "terms" : { "field" : "@source.bosh_director", "size": 0 },
             "aggs" : {
                 "cluster" : {
-                    "terms" : { "field" : "@source.bosh_deployment" },
+                    "terms" : { "field" : "@source.bosh_deployment", "size": 0 },
                     "aggs" : {
                         "host" : {
-                            "terms" : { "field" : "@source.bosh_job" },
+                            "terms" : { "field" : "@source.bosh_job", "size": 0 },
                             "aggs" : {
                                 "service" : {
-                                    "terms" : { "field" : "@source.bosh_template" },
+                                    "terms" : { "field" : "@source.bosh_template", "size": 0 },
                                     "aggs" : {
                                         "event_source" : {
-                                            "terms" : { "field" : "@source.path" }
+                                            "terms" : { "field" : "@source.path", "size": 0}
                                         }
                                     }
                                 }
