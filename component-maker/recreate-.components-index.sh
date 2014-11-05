@@ -12,7 +12,8 @@ QUERY=$(cat <<EOF
           "type" : "string"
         },
         "_type" : {
-          "type" : "string"
+          "type" : "string",
+          "index" : "not_analyzed"
         },
         "children" : {
           "properties" : {
@@ -125,9 +126,14 @@ QUERY=$(cat <<EOF
           }
         },
         "environment" : {
-          "type" : "string"
+          "type" : "string",
+          "index" : "not_analyzed"
         },
         "key" : {
+          "type" : "string",
+          "index" : "not_analyzed"
+        },
+        "name" : {
           "type" : "string",
           "index" : "not_analyzed"
         }
@@ -143,7 +149,8 @@ QUERY=$(cat <<EOF
           "type" : "string"
         },
         "_type" : {
-          "type" : "string"
+          "type" : "string",
+          "index" : "not_analyzed"
         },
         "children" : {
           "properties" : {
@@ -178,20 +185,28 @@ QUERY=$(cat <<EOF
           }
         },
         "cluster" : {
-          "type" : "string"
+          "type" : "string",
+          "index" : "not_analyzed"
         },
         "environment" : {
-          "type" : "string"
+          "type" : "string",
+          "index" : "not_analyzed"
         },
         "host" : {
-          "type" : "string"
+          "type" : "string",
+          "index" : "not_analyzed"
         },
         "key" : {
           "type" : "string",
           "index" : "not_analyzed"
         },
         "service" : {
-          "type" : "string"
+          "type" : "string",
+          "index" : "not_analyzed"
+        },
+        "name" : {
+          "type" : "string",
+          "index" : "not_analyzed"
         }
       }
     },
@@ -202,10 +217,12 @@ QUERY=$(cat <<EOF
           "format" : "dateOptionalTime"
         },
         "@version" : {
-          "type" : "string"
+          "type" : "string",
+          "index" : "not_analyzed"
         },
         "_type" : {
-          "type" : "string"
+          "type" : "string",
+          "index" : "not_analyzed"
         },
         "children" : {
           "properties" : {
@@ -269,15 +286,22 @@ QUERY=$(cat <<EOF
           }
         },
         "cluster" : {
-          "type" : "string"
+          "type" : "string",
+          "index" : "not_analyzed"
         },
         "environment" : {
-          "type" : "string"
+          "type" : "string",
+          "index" : "not_analyzed"
         },
         "host" : {
-          "type" : "string"
+          "type" : "string",
+          "index" : "not_analyzed"
         },
         "key" : {
+          "type" : "string",
+          "index" : "not_analyzed"
+        },
+        "name" : {
           "type" : "string",
           "index" : "not_analyzed"
         }
@@ -293,26 +317,36 @@ QUERY=$(cat <<EOF
           "type" : "string"
         },
         "_type" : {
-          "type" : "string"
+          "type" : "string",
+          "index" : "not_analyzed"
         },
         "cluster" : {
-          "type" : "string"
+          "type" : "string",
+          "index" : "not_analyzed"
         },
         "environment" : {
-          "type" : "string"
+          "type" : "string",
+          "index" : "not_analyzed"
         },
         "event_source" : {
-          "type" : "string"
+          "type" : "string",
+          "index" : "not_analyzed"
         },
         "host" : {
-          "type" : "string"
+          "type" : "string",
+          "index" : "not_analyzed"
         },
         "key" : {
           "type" : "string",
           "index" : "not_analyzed"
         },
         "service" : {
-          "type" : "string"
+          "type" : "string",
+          "index" : "not_analyzed"
+        },
+        "name" : {
+          "type" : "string",
+          "index" : "not_analyzed"
         }
       }
     },
@@ -326,7 +360,8 @@ QUERY=$(cat <<EOF
           "type" : "string"
         },
         "_type" : {
-          "type" : "string"
+          "type" : "string",
+          "index" : "not_analyzed"
         },
         "children" : {
           "properties" : {
@@ -416,12 +451,18 @@ QUERY=$(cat <<EOF
           }
         },
         "cluster" : {
-          "type" : "string"
+          "type" : "string",
+          "index" : "not_analyzed"
         },
         "environment" : {
-          "type" : "string"
+          "type" : "string",
+          "index" : "not_analyzed"
         },
         "key" : {
+          "type" : "string",
+          "index" : "not_analyzed"
+        },
+        "name" : {
           "type" : "string",
           "index" : "not_analyzed"
         }

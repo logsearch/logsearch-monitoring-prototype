@@ -31,6 +31,7 @@ class LogStash::Filters::ExtractComponents < LogStash::Filters::Base
     				service['event_source']['buckets'].each do |event_source|
 				    	component = { 
 				    		"_type" => "event_source",
+				    		:name => event_source['key'],
 				    		:key => "#{environment['key']}/#{cluster['key']}/#{host['key']}/#{service['key']}/#{event_source['key']}",
 				    		:environment => environment['key'],
 				    		:cluster => cluster['key'],
@@ -45,6 +46,7 @@ class LogStash::Filters::ExtractComponents < LogStash::Filters::Base
 				    end
 				    component = { 
 						"_type" => "service",
+						:name => service['key'],
 			    		:key => "#{environment['key']}/#{cluster['key']}/#{host['key']}/#{service['key']}",
 			    		:environment => environment['key'],
 			    		:cluster => cluster['key'],
@@ -59,6 +61,7 @@ class LogStash::Filters::ExtractComponents < LogStash::Filters::Base
 			    end
 			    component = { 
 					"_type" => "host",
+					:name => host['key'],
 		    		:key => "#{environment['key']}/#{cluster['key']}/#{host['key']}",
 		    		:environment => environment['key'],
 		    		:cluster => cluster['key'],
@@ -72,6 +75,7 @@ class LogStash::Filters::ExtractComponents < LogStash::Filters::Base
 			end
 			component = { 
 				"_type" => "cluster",
+				:name => cluster['key'],
 	    		:key => "#{environment['key']}/#{cluster['key']}",
 	    		:environment => environment['key'],
 	    		:cluster => cluster['key'],
@@ -84,6 +88,7 @@ class LogStash::Filters::ExtractComponents < LogStash::Filters::Base
 	    end
 	    component = { 
 			"_type" => "environment",
+			:name => environment['key'],
     		:key => "#{environment['key']}",
     		:environment => environment['key'],
     		:children => environment_children
