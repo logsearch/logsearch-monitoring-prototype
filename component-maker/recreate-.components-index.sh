@@ -15,116 +15,6 @@ QUERY=$(cat <<EOF
           "type" : "string",
           "index" : "not_analyzed"
         },
-        "children" : {
-          "properties" : {
-            "@timestamp" : {
-              "type" : "date",
-              "format" : "dateOptionalTime"
-            },
-            "@version" : {
-              "type" : "string"
-            },
-            "_type" : {
-              "type" : "string"
-            },
-            "children" : {
-              "properties" : {
-                "@timestamp" : {
-                  "type" : "date",
-                  "format" : "dateOptionalTime"
-                },
-                "@version" : {
-                  "type" : "string"
-                },
-                "_type" : {
-                  "type" : "string"
-                },
-                "children" : {
-                  "properties" : {
-                    "@timestamp" : {
-                      "type" : "date",
-                      "format" : "dateOptionalTime"
-                    },
-                    "@version" : {
-                      "type" : "string"
-                    },
-                    "_type" : {
-                      "type" : "string"
-                    },
-                    "children" : {
-                      "properties" : {
-                        "@timestamp" : {
-                          "type" : "date",
-                          "format" : "dateOptionalTime"
-                        },
-                        "@version" : {
-                          "type" : "string"
-                        },
-                        "_type" : {
-                          "type" : "string"
-                        },
-                        "cluster" : {
-                          "type" : "string"
-                        },
-                        "environment" : {
-                          "type" : "string"
-                        },
-                        "event_source" : {
-                          "type" : "string"
-                        },
-                        "host" : {
-                          "type" : "string"
-                        },
-                        "key" : {
-                          "type" : "string"
-                        },
-                        "service" : {
-                          "type" : "string"
-                        }
-                      }
-                    },
-                    "cluster" : {
-                      "type" : "string"
-                    },
-                    "environment" : {
-                      "type" : "string"
-                    },
-                    "host" : {
-                      "type" : "string"
-                    },
-                    "key" : {
-                      "type" : "string"
-                    },
-                    "service" : {
-                      "type" : "string"
-                    }
-                  }
-                },
-                "cluster" : {
-                  "type" : "string"
-                },
-                "environment" : {
-                  "type" : "string"
-                },
-                "host" : {
-                  "type" : "string"
-                },
-                "key" : {
-                  "type" : "string"
-                }
-              }
-            },
-            "cluster" : {
-              "type" : "string"
-            },
-            "environment" : {
-              "type" : "string"
-            },
-            "key" : {
-              "type" : "string"
-            }
-          }
-        },
         "environment" : {
           "type" : "string",
           "index" : "not_analyzed"
@@ -134,6 +24,10 @@ QUERY=$(cat <<EOF
           "index" : "not_analyzed"
         },
         "name" : {
+          "type" : "string",
+          "index" : "not_analyzed"
+        },
+        "status" : {
           "type" : "string",
           "index" : "not_analyzed"
         }
@@ -151,38 +45,6 @@ QUERY=$(cat <<EOF
         "_type" : {
           "type" : "string",
           "index" : "not_analyzed"
-        },
-        "children" : {
-          "properties" : {
-            "@timestamp" : {
-              "type" : "date",
-              "format" : "dateOptionalTime"
-            },
-            "@version" : {
-              "type" : "string"
-            },
-            "_type" : {
-              "type" : "string"
-            },
-            "cluster" : {
-              "type" : "string"
-            },
-            "environment" : {
-              "type" : "string"
-            },
-            "event_source" : {
-              "type" : "string"
-            },
-            "host" : {
-              "type" : "string"
-            },
-            "key" : {
-              "type" : "string"
-            },
-            "service" : {
-              "type" : "string"
-            }
-          }
         },
         "cluster" : {
           "type" : "string",
@@ -207,6 +69,10 @@ QUERY=$(cat <<EOF
         "name" : {
           "type" : "string",
           "index" : "not_analyzed"
+        },
+        "status" : {
+          "type" : "string",
+          "index" : "not_analyzed"
         }
       }
     },
@@ -223,67 +89,6 @@ QUERY=$(cat <<EOF
         "_type" : {
           "type" : "string",
           "index" : "not_analyzed"
-        },
-        "children" : {
-          "properties" : {
-            "@timestamp" : {
-              "type" : "date",
-              "format" : "dateOptionalTime"
-            },
-            "@version" : {
-              "type" : "string"
-            },
-            "_type" : {
-              "type" : "string"
-            },
-            "children" : {
-              "properties" : {
-                "@timestamp" : {
-                  "type" : "date",
-                  "format" : "dateOptionalTime"
-                },
-                "@version" : {
-                  "type" : "string"
-                },
-                "_type" : {
-                  "type" : "string"
-                },
-                "cluster" : {
-                  "type" : "string"
-                },
-                "environment" : {
-                  "type" : "string"
-                },
-                "event_source" : {
-                  "type" : "string"
-                },
-                "host" : {
-                  "type" : "string"
-                },
-                "key" : {
-                  "type" : "string"
-                },
-                "service" : {
-                  "type" : "string"
-                }
-              }
-            },
-            "cluster" : {
-              "type" : "string"
-            },
-            "environment" : {
-              "type" : "string"
-            },
-            "host" : {
-              "type" : "string"
-            },
-            "key" : {
-              "type" : "string"
-            },
-            "service" : {
-              "type" : "string"
-            }
-          }
         },
         "cluster" : {
           "type" : "string",
@@ -302,6 +107,10 @@ QUERY=$(cat <<EOF
           "index" : "not_analyzed"
         },
         "name" : {
+          "type" : "string",
+          "index" : "not_analyzed"
+        },
+        "status" : {
           "type" : "string",
           "index" : "not_analyzed"
         }
@@ -347,6 +156,10 @@ QUERY=$(cat <<EOF
         "name" : {
           "type" : "string",
           "index" : "not_analyzed"
+        },
+        "status" : {
+          "type" : "string",
+          "index" : "not_analyzed"
         }
       }
     },
@@ -363,93 +176,6 @@ QUERY=$(cat <<EOF
           "type" : "string",
           "index" : "not_analyzed"
         },
-        "children" : {
-          "properties" : {
-            "@timestamp" : {
-              "type" : "date",
-              "format" : "dateOptionalTime"
-            },
-            "@version" : {
-              "type" : "string"
-            },
-            "_type" : {
-              "type" : "string"
-            },
-            "children" : {
-              "properties" : {
-                "@timestamp" : {
-                  "type" : "date",
-                  "format" : "dateOptionalTime"
-                },
-                "@version" : {
-                  "type" : "string"
-                },
-                "_type" : {
-                  "type" : "string"
-                },
-                "children" : {
-                  "properties" : {
-                    "@timestamp" : {
-                      "type" : "date",
-                      "format" : "dateOptionalTime"
-                    },
-                    "@version" : {
-                      "type" : "string"
-                    },
-                    "_type" : {
-                      "type" : "string"
-                    },
-                    "cluster" : {
-                      "type" : "string"
-                    },
-                    "environment" : {
-                      "type" : "string"
-                    },
-                    "event_source" : {
-                      "type" : "string"
-                    },
-                    "host" : {
-                      "type" : "string"
-                    },
-                    "key" : {
-                      "type" : "string"
-                    },
-                    "service" : {
-                      "type" : "string"
-                    }
-                  }
-                },
-                "cluster" : {
-                  "type" : "string"
-                },
-                "environment" : {
-                  "type" : "string"
-                },
-                "host" : {
-                  "type" : "string"
-                },
-                "key" : {
-                  "type" : "string"
-                },
-                "service" : {
-                  "type" : "string"
-                }
-              }
-            },
-            "cluster" : {
-              "type" : "string"
-            },
-            "environment" : {
-              "type" : "string"
-            },
-            "host" : {
-              "type" : "string"
-            },
-            "key" : {
-              "type" : "string"
-            }
-          }
-        },
         "cluster" : {
           "type" : "string",
           "index" : "not_analyzed"
@@ -463,6 +189,10 @@ QUERY=$(cat <<EOF
           "index" : "not_analyzed"
         },
         "name" : {
+          "type" : "string",
+          "index" : "not_analyzed"
+        },
+        "status" : {
           "type" : "string",
           "index" : "not_analyzed"
         }
