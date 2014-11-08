@@ -1,6 +1,6 @@
 ---
 applications:
-- name: component-maker
+- name: logsearchshipper-bosh-event-data-exists-status-checker
   memory: 512M 
   instances: 1
   path: .

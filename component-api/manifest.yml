@@ -1,0 +1,7 @@
+---
+applications:
+- name: component-api
+  memory: 64M 
+  instances: 1
+  path: .
+  buildpack: staticfile_buildpack

@@ -5,7 +5,7 @@ do
   NOW=$( date -u +"%Y-%m-%dT%H:%M:%SZ" )
   if [ $(uname) == Darwin ]; then
     YESTERDAY_INDEX=$( date -u -v -24H +%Y.%m.%d )
-    ONE_DAY_AGO=$( date -u -v -24H +"%Y-%m-%dT%H:%M:%SZ")
+    ONE_DAY_AGO=$( date -u -v -10M +"%Y-%m-%dT%H:%M:%SZ")
   else
     YESTERDAY_INDEX=$( date -u -d "-24 hours" +%Y.%m.%d )
     ONE_DAY_AGO=$( date -u -d "-24 hours" +"%Y-%m-%dT%H:%M:%SZ")
